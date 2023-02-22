@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ProjectLoader
 {
@@ -25,8 +26,7 @@ public class ProjectLoader
         if (currentFile.isDirectory())
         {
             var childrenFile = currentFile.listFiles();
-            assert childrenFile != null;
-            for (var childFile : childrenFile)
+            for (var childFile : Objects.requireNonNull(childrenFile))
             {
                 newAcquiredClasses.addAll(loadClassesOnFile(childFile));
             }

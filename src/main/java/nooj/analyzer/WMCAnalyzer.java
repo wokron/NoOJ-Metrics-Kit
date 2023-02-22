@@ -1,5 +1,6 @@
 package nooj.analyzer;
 
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
 
 import java.util.List;
@@ -46,6 +47,9 @@ public class WMCAnalyzer implements Analyzer
                     || instruction instanceof LookupSwitchInsnNode
             )
             {
+                int opcode = instruction.getOpcode();
+                if (opcode == Opcodes.GOTO || opcode == Opcodes.JSR || opcode == Opcodes.RET)
+                    continue;
                 complexity++;
 
             }
@@ -57,15 +61,17 @@ public class WMCAnalyzer implements Analyzer
     @Override
     public String getAnalyzeResult()
     {
+        int totalComplexity = 0;
         for (var className : circleComplexities.keySet())
         {
             System.out.println(className);
             for (var methodName : circleComplexities.get(className).keySet())
             {
-                System.out.println(methodName +
-                        circleComplexities.get(className).get(methodName));
+                var complexity = circleComplexities.get(className).get(methodName);
+                System.out.println(methodName + " " + complexity);
+                totalComplexity += complexity;
             }
         }
-        return "";
+        return "WMC: " + totalComplexity;
     }
 }
