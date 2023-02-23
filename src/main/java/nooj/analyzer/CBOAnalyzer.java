@@ -1,11 +1,11 @@
 package nooj.analyzer;
 
+import nooj.utils.Util;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 
 import java.util.*;
-import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 
 public class CBOAnalyzer implements Analyzer
@@ -33,13 +33,13 @@ public class CBOAnalyzer implements Analyzer
 
         for (var field : cls.fields)
         {
-            coupling.addAll(solveDescriptor(field.desc));
+            coupling.addAll(Util.solveDescriptor(field.desc));
         }
 
         for (var method : cls.methods)
         {
             coupling.addAll(solveMethodCodeLines(method));
-            coupling.addAll(solveDescriptor(method.desc));
+            coupling.addAll(Util.solveDescriptor(method.desc));
         }
 
         coupling.remove(cls.name);
@@ -62,28 +62,6 @@ public class CBOAnalyzer implements Analyzer
                     coupling.add(preInit);
                     preInit = null;
                 }
-            }
-        }
-
-        return coupling;
-    }
-
-    private List<String> solveDescriptor(String desc)
-    {
-        List<String> coupling = new ArrayList<>();
-
-        String descReg = "L[a-zA-Z/]+;|\\[?[BCDFIJSZ]";
-        var allMatch = Pattern.compile(descReg)
-                .matcher(desc)
-                .results()
-                .map(MatchResult::group)
-                .toArray(String[]::new);
-
-        for (var arg : allMatch)
-        {
-            if (arg.startsWith("L") && arg.endsWith(";"))
-            {
-                coupling.add(arg.substring(1, arg.length()-1));
             }
         }
 
