@@ -11,7 +11,7 @@ public class Util
     {
         List<String> descTypes = new ArrayList<>();
 
-        String descReg = "L[a-zA-Z/]+;|\\[?[BCDFIJSZ]";
+        String descReg = "L[a-zA-Z/]+;|\\[?[BCDFIJSZV]";
         var allMatch = Pattern.compile(descReg)
                 .matcher(desc)
                 .results()

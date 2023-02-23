@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="完成CBOAnalyzer">
+    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="workspace.xml更改">
       <change afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/RFCAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nooj/utils/Util.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/CBOAnalyzerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/DITAnalyzerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/NOCAnalyzerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/RFCAnalyzerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/WMCAnalyzerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/CBOAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/CBOAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/utils/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677068845404</updated>
       <workItem from="1677068847645" duration="8392000" />
-      <workItem from="1677108872852" duration="5671000" />
+      <workItem from="1677108872852" duration="7482000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1677072565617</created>
@@ -115,7 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677114198995</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="将solveDescriptor方法提取作为工具方法">
+      <created>1677114839368</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677114839368</updated>
+    </task>
+    <task id="LOCAL-00009" summary="workspace.xml更改">
+      <created>1677114881919</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677114881919</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +154,8 @@
     <MESSAGE value="完成DITAnalyzer" />
     <MESSAGE value="完成NOCAnalyzer" />
     <MESSAGE value="完成CBOAnalyzer" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成CBOAnalyzer" />
+    <MESSAGE value="将solveDescriptor方法提取作为工具方法" />
+    <MESSAGE value="workspace.xml更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml更改" />
   </component>
 </project>
