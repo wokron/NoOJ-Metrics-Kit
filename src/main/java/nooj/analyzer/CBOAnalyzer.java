@@ -3,10 +3,8 @@ package nooj.analyzer;
 import nooj.result.ClassAnalyzeResult;
 import nooj.utils.Util;
 import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -50,24 +48,7 @@ public class CBOAnalyzer implements Analyzer
 
     private List<String> solveMethodCodeLines(MethodNode method)
     {
-        List<String> coupling = new ArrayList<>();
-        String preInit = null;
-
-        for (var instruction : method.instructions)
-        {
-            if (instruction instanceof MethodInsnNode methodInstruction)
-            {
-                if (methodInstruction.name.equals("<init>"))
-                    preInit = methodInstruction.owner;
-                else if (preInit != null)
-                {
-                    coupling.add(preInit);
-                    preInit = null;
-                }
-            }
-        }
-
-        return coupling;
+        return Util.getClassesInMethods(method);
     }
 
     @Override

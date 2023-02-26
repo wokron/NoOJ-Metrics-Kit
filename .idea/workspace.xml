@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="完成了循环依赖检测">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/CyclicDependencyAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nooj/result/ListLikeAnalyzeResult.java" afterDir="false" />
+    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LayerExposureAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/CBOAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/CBOAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/utils/ConstStrings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/utils/ConstStrings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOM4Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOM4Analyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/result/ClassAnalyzeResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/result/ClassAnalyzeResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/result/ListLikeAnalyzeResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/result/ListLikeAnalyzeResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/utils/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677396422656</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="完成了循环依赖检测">
+      <created>1677399539505</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1677399539505</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,10 +325,22 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="4" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="cls.name.endsWith(&quot;CyclicDependencyAnalyzer&quot;)" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOM4Analyzer.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOM4Analyzer.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="java.util.TreeMap$Entry" memberName="key" />
         <PinnedItemInfo parentTag="org.objectweb.asm.tree.InsnList" memberName="cache" />
       </pinned-members>
     </pin-to-top-manager>

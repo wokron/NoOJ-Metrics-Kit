@@ -1,5 +1,8 @@
 package nooj.utils;
 
+import org.objectweb.asm.tree.MethodInsnNode;
+import org.objectweb.asm.tree.MethodNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.MatchResult;
@@ -46,5 +49,27 @@ public class Util
         sb.append(")");
 
         return sb.toString().replace("/", ".");
+    }
+
+    public static List<String> getClassesInMethods(MethodNode method)
+    {
+        List<String> classes = new ArrayList<>();
+        String preInit = null;
+
+        for (var instruction : method.instructions)
+        {
+            if (instruction instanceof MethodInsnNode methodInstruction)
+            {
+                if (methodInstruction.name.equals("<init>"))
+                    preInit = methodInstruction.owner;
+                else if (preInit != null)
+                {
+                    classes.add(preInit);
+                    preInit = null;
+                }
+            }
+        }
+
+        return classes;
     }
 }
