@@ -14,9 +14,15 @@ public class ProjectLoader
 {
     private final List<ClassNode> classNodes = new ArrayList<>();
 
+    public ProjectLoader(String projPath) throws IOException
+    {
+        loadProject(projPath);
+    }
+
     public void loadProject(String projPath) throws IOException
     {
         File projDir = new File(projPath);
+        classNodes.clear();
         classNodes.addAll(loadClassesOnFile(projDir));
     }
 
