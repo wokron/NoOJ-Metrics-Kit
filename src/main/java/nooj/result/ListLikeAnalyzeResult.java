@@ -26,9 +26,11 @@ public class ListLikeAnalyzeResult<V> extends AnalyzeResult
     public String toString()
     {
         StringBuilder sb = new StringBuilder(super.toString());
+        if (values.isEmpty())
+            sb.append("\n\tNo interesting result.");
         for (var value : values)
         {
-            sb.append("\n").append(value);
+            sb.append("\n\t").append(value);
         }
 
         return sb.toString();
