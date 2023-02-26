@@ -1,13 +1,15 @@
 package nooj.analyzer;
 
-import nooj.result.AnalyzeResult;
 import nooj.result.ClassAnalyzeResult;
 import nooj.utils.Util;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Pattern;
 
 public class CBOAnalyzer implements Analyzer
@@ -28,9 +30,6 @@ public class CBOAnalyzer implements Analyzer
         String className = cls.name;
 
         Set<String> coupling = new TreeSet<>();
-
-        coupling.add(cls.superName);
-        coupling.addAll(cls.interfaces);
 
         for (var field : cls.fields)
         {
@@ -72,7 +71,7 @@ public class CBOAnalyzer implements Analyzer
     }
 
     @Override
-    public AnalyzeResult getAnalyzeResult()
+    public ClassAnalyzeResult<Set<String>> getAnalyzeResult()
     {
         return result;
     }
