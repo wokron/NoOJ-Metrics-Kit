@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="完成了LongMethodAnalyzer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LargeClassAnalyzer.java" afterDir="false" />
+    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="完成了LargeClassAnalyzer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LongParameterListAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOM4Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOM4Analyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/result/MethodAnalyzeResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/result/MethodAnalyzeResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677389993942</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="完成了LargeClassAnalyzer">
+      <created>1677395873915</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1677395873915</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +275,8 @@
     <MESSAGE value="修改了Result的toString方法" />
     <MESSAGE value="将methodSignatureNormalize抽取为静态方法" />
     <MESSAGE value="完成了LongMethodAnalyzer" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了LongMethodAnalyzer" />
+    <MESSAGE value="完成了LargeClassAnalyzer" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了LargeClassAnalyzer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
