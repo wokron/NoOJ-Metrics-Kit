@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="完成了RFCAnalyzer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOMAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" afterDir="false" />
+    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="修改CBO类">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/DITAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/DITAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOMAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOMAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/NOCAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/NOCAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/RFCAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/RFCAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/WMCAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/WMCAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -39,6 +49,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "E:/Study/code/java/NoOJ-Metrics-Kit/src/main/java/nooj",
     "last_opened_file_path": "E:/桌面文档/临时整理/整理/大二上整理/电子版作业/面向对象/MySCS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -47,7 +58,7 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.statistic.project.settings",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -60,7 +71,11 @@
       <option name="presentableId" value="Default" />
       <updated>1677068845404</updated>
       <workItem from="1677068847645" duration="8392000" />
-      <workItem from="1677108872852" duration="10813000" />
+      <workItem from="1677108872852" duration="11946000" />
+      <workItem from="1677150302933" duration="3519000" />
+      <workItem from="1677369779877" duration="63000" />
+      <workItem from="1677371391218" duration="140000" />
+      <workItem from="1677371549266" duration="4219000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1677072565617</created>
@@ -132,7 +147,49 @@
       <option name="project" value="LOCAL" />
       <updated>1677116636168</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="完成了LCOMAnalyzer">
+      <created>1677120265356</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677120265356</updated>
+    </task>
+    <task id="LOCAL-00012" summary="简化了ProjectLoader的使用">
+      <created>1677371808557</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677371808557</updated>
+    </task>
+    <task id="LOCAL-00013" summary="添加了程序入口">
+      <created>1677371850696</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1677371850696</updated>
+    </task>
+    <task id="LOCAL-00014" summary="创建结果类">
+      <created>1677372364969</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677372364969</updated>
+    </task>
+    <task id="LOCAL-00015" summary="创建了两个Result子类">
+      <created>1677373327116</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677373327116</updated>
+    </task>
+    <task id="LOCAL-00016" summary="修改CBO类">
+      <created>1677373729095</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1677373729095</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +217,13 @@
     <MESSAGE value="将solveDescriptor方法提取作为工具方法" />
     <MESSAGE value="workspace.xml更改" />
     <MESSAGE value="完成了RFCAnalyzer" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了RFCAnalyzer" />
+    <MESSAGE value="完成了LCOMAnalyzer" />
+    <MESSAGE value="简化了ProjectLoader的使用" />
+    <MESSAGE value="添加了程序入口" />
+    <MESSAGE value="创建结果类" />
+    <MESSAGE value="创建了两个Result子类" />
+    <MESSAGE value="修改CBO类" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改CBO类" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,15 +1,15 @@
 package nooj.analyzer;
 
+import nooj.result.AnalyzeResult;
+import nooj.result.MethodAnalyzeResult;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
 
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class WMCAnalyzer implements Analyzer
 {
-    private final Map<String, Map<String, Integer>> circleComplexities = new TreeMap<>();
+    private final MethodAnalyzeResult<Integer> result = new MethodAnalyzeResult<>("WMC", "");
 
     @Override
     public void analyze(List<ClassNode> projectClasses)
@@ -24,15 +24,11 @@ public class WMCAnalyzer implements Analyzer
     {
         String className = cls.name;
 
-        if (!circleComplexities.containsKey(className))
-            circleComplexities.put(className, new TreeMap<>());
-        Map<String, Integer> complexitiesForClass = circleComplexities.get(className);
-
         for (var method : cls.methods)
         {
             String methodName = method.name + " " + method.desc;
             int methodComplexity = solveMethod(method);
-            complexitiesForClass.put(methodName, methodComplexity);
+            result.addResult(className, methodName, methodComplexity);
         }
     }
 
@@ -40,18 +36,23 @@ public class WMCAnalyzer implements Analyzer
     {
         int complexity = 1;
 
+        complexity += method.tryCatchBlocks.size();
+
         for (var instruction : method.instructions)
         {
-            if (instruction instanceof JumpInsnNode
-                    || instruction instanceof TableSwitchInsnNode
-                    || instruction instanceof LookupSwitchInsnNode
-            )
+            if (instruction instanceof JumpInsnNode)
             {
                 int opcode = instruction.getOpcode();
-                if (opcode == Opcodes.GOTO || opcode == Opcodes.JSR || opcode == Opcodes.RET)
-                    continue;
-                complexity++;
-
+                if (opcode != Opcodes.GOTO && opcode != Opcodes.JSR && opcode != Opcodes.RET)
+                    complexity++;
+            }
+            else if (instruction instanceof TableSwitchInsnNode tableSwitchInsnNode)
+            {
+                complexity += tableSwitchInsnNode.labels.size();
+            }
+            else if (instruction instanceof LookupSwitchInsnNode lookupSwitchInsnNode)
+            {
+                complexity += lookupSwitchInsnNode.labels.size();
             }
         }
 
@@ -59,19 +60,8 @@ public class WMCAnalyzer implements Analyzer
     }
 
     @Override
-    public String getAnalyzeResult()
+    public AnalyzeResult getAnalyzeResult()
     {
-        int totalComplexity = 0;
-        for (var className : circleComplexities.keySet())
-        {
-            System.out.println(className);
-            for (var methodName : circleComplexities.get(className).keySet())
-            {
-                var complexity = circleComplexities.get(className).get(methodName);
-                System.out.println(methodName + " " + complexity);
-                totalComplexity += complexity;
-            }
-        }
-        return "WMC: " + totalComplexity;
+        return result;
     }
 }
