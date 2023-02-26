@@ -1,6 +1,5 @@
 package nooj.analyzer;
 
-import nooj.result.AnalyzeResult;
 import nooj.result.MethodAnalyzeResult;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
@@ -60,7 +59,7 @@ public class WMCAnalyzer implements Analyzer
     }
 
     @Override
-    public AnalyzeResult getAnalyzeResult()
+    public MethodAnalyzeResult<Integer> getAnalyzeResult()
     {
         return result;
     }
