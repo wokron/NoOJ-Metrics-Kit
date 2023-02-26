@@ -25,7 +25,7 @@ public class MethodAnalyzeResult<V> extends ClassAnalyzeResult<Map<String, V>>
         StringBuilder sb = new StringBuilder();
         for (var methodName : value.keySet())
         {
-            sb.append(" ").append(ConstStrings.METHOD).append(" ").append(methodName).append(": ").append(value.get(methodName));
+            sb.append("\n\t").append(ConstStrings.METHOD).append(" ").append(methodName).append(": ").append(value.get(methodName));
         }
         return sb.toString();
     }
