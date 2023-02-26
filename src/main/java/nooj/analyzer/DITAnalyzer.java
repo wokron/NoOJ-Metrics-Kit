@@ -1,5 +1,7 @@
 package nooj.analyzer;
 
+import nooj.result.AnalyzeResult;
+import nooj.result.ClassAnalyzeResult;
 import org.objectweb.asm.tree.ClassNode;
 
 import java.util.List;
@@ -9,7 +11,9 @@ import java.util.TreeMap;
 public class DITAnalyzer implements Analyzer
 {
     private final Map<String, String> inheritTree = new TreeMap<>();
-    private final Map<String, Integer> inheritDepth = new TreeMap<>();
+
+    private final ClassAnalyzeResult<Integer> result = new ClassAnalyzeResult<>("DIT", "");
+
     @Override
     public void analyze(List<ClassNode> projectClasses)
     {
@@ -19,12 +23,13 @@ public class DITAnalyzer implements Analyzer
         }
         for (var cls : projectClasses)
         {
-            inheritDepth.put(cls.name, calculateInheritDepth(cls.name));
+            result.addResult(cls.name, calculateInheritDepth(cls.name));
         }
     }
 
     private int calculateInheritDepth(String className)
     {
+        var inheritDepth = result.getAnalyzeResults();
         if (className.equals("java/lang/Object"))
             return 1;
         else if (!inheritTree.containsKey(className))
@@ -57,12 +62,8 @@ public class DITAnalyzer implements Analyzer
     }
 
     @Override
-    public String getAnalyzeResult()
+    public AnalyzeResult getAnalyzeResult()
     {
-        for (var cls : inheritDepth.keySet())
-        {
-            System.out.println(cls + ":" + inheritDepth.get(cls));
-        }
-        return "";
+        return result;
     }
 }
