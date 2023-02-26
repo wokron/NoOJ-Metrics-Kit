@@ -1,5 +1,7 @@
 package nooj.analyzer;
 
+import nooj.result.AnalyzeResult;
+import nooj.result.ClassAnalyzeResult;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.FieldInsnNode;
 import org.objectweb.asm.tree.MethodNode;
@@ -8,7 +10,7 @@ import java.util.*;
 
 public class LCOMAnalyzer implements Analyzer
 {
-    private final Map<String, Integer> lackOfCohesion = new TreeMap<>();
+    private final ClassAnalyzeResult<Integer> result = new ClassAnalyzeResult<>("LCOM1", "");
 
     @Override
     public void analyze(List<ClassNode> projectClasses)
@@ -57,12 +59,11 @@ public class LCOMAnalyzer implements Analyzer
 
         int lackOfCohesionValue = Math.max(emptyCnt - notEmptyCnt, 0);
 
-        lackOfCohesion.put(className, lackOfCohesionValue);
+        result.addResult(className, lackOfCohesionValue);
     }
 
     private Collection<String> solveMethodCodeLines(MethodNode method)
     {
-        System.out.println(method.name + ":");
         Set<String> fieldUse = new TreeSet<>();
         for (var instruction : method.instructions)
         {
@@ -72,19 +73,12 @@ public class LCOMAnalyzer implements Analyzer
             }
         }
 
-        fieldUse.forEach(System.out::println);
-
         return fieldUse;
     }
 
     @Override
-    public String getAnalyzeResult()
+    public AnalyzeResult getAnalyzeResult()
     {
-        for (var cls : lackOfCohesion.keySet())
-        {
-            System.out.println(cls + ":" + lackOfCohesion.get(cls));
-        }
-
-        return "";
+        return result;
     }
 }

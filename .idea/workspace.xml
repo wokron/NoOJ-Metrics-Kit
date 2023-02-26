@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="修改CBO类">
+    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="修改DIT类">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/DITAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/DITAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOMAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOMAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/NOCAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/NOCAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/RFCAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/RFCAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/WMCAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/WMCAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +73,7 @@
       <workItem from="1677150302933" duration="3519000" />
       <workItem from="1677369779877" duration="63000" />
       <workItem from="1677371391218" duration="140000" />
-      <workItem from="1677371549266" duration="4219000" />
+      <workItem from="1677371549266" duration="4718000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1677072565617</created>
@@ -189,7 +187,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677373729095</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="修改WMC类">
+      <created>1677375829984</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1677375829984</updated>
+    </task>
+    <task id="LOCAL-00018" summary="修改DIT类">
+      <created>1677375861033</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1677375861033</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +235,9 @@
     <MESSAGE value="创建结果类" />
     <MESSAGE value="创建了两个Result子类" />
     <MESSAGE value="修改CBO类" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改CBO类" />
+    <MESSAGE value="修改WMC类" />
+    <MESSAGE value="修改DIT类" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改DIT类" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

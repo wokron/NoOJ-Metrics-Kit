@@ -1,5 +1,7 @@
 package nooj.analyzer;
 
+import nooj.result.AnalyzeResult;
+import nooj.result.ClassAnalyzeResult;
 import nooj.utils.Util;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodInsnNode;
@@ -9,7 +11,7 @@ import java.util.*;
 
 public class RFCAnalyzer implements Analyzer
 {
-    private final Map<String, Set<String>> responseMethods = new TreeMap<>();
+    private final ClassAnalyzeResult<Set<String>> result = new ClassAnalyzeResult<>("RFC", "");
 
     @Override
     public void analyze(List<ClassNode> projectClasses)
@@ -23,9 +25,10 @@ public class RFCAnalyzer implements Analyzer
     private void solveClass(ClassNode cls)
     {
         String className = cls.name;
+        var responseMethods = result.getAnalyzeResults();
 
         if (!responseMethods.containsKey(className))
-            responseMethods.put(className, new TreeSet<>());
+            result.addResult(className, new TreeSet<>());
         Set<String> methodNames = responseMethods.get(className);
 
         for (var method : cls.methods)
@@ -79,15 +82,8 @@ public class RFCAnalyzer implements Analyzer
     }
 
     @Override
-    public String getAnalyzeResult()
+    public AnalyzeResult getAnalyzeResult()
     {
-        for (var cls : responseMethods.keySet())
-        {
-            System.out.println(cls + ":" + responseMethods.get(cls).size());
-            responseMethods.get(cls).forEach(c -> System.out.print(c + " "));
-            System.out.println();
-        }
-
-        return "";
+        return result;
     }
 }
