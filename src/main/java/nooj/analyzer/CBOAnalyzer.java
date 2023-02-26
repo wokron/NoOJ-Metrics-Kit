@@ -1,5 +1,7 @@
 package nooj.analyzer;
 
+import nooj.result.AnalyzeResult;
+import nooj.result.ClassAnalyzeResult;
 import nooj.utils.Util;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.MethodInsnNode;
@@ -10,7 +12,8 @@ import java.util.regex.Pattern;
 
 public class CBOAnalyzer implements Analyzer
 {
-    private final Map<String, Set<String>> couplingClasses = new TreeMap<>();
+    private final ClassAnalyzeResult<Set<String>> result = new ClassAnalyzeResult<>("CBO", "");
+
     @Override
     public void analyze(List<ClassNode> projectClasses)
     {
@@ -24,9 +27,7 @@ public class CBOAnalyzer implements Analyzer
     {
         String className = cls.name;
 
-        if (!couplingClasses.containsKey(className))
-            couplingClasses.put(className, new TreeSet<>());
-        Set<String> coupling = couplingClasses.get(className);
+        Set<String> coupling = new TreeSet<>();
 
         coupling.add(cls.superName);
         coupling.addAll(cls.interfaces);
@@ -43,7 +44,9 @@ public class CBOAnalyzer implements Analyzer
         }
 
         coupling.remove(cls.name);
-        coupling.removeIf(c -> Pattern.matches("^(java.*|\\[?[BCDFIJSZ])$", c));
+        coupling.removeIf(c -> Pattern.matches("^(java.*|\\[?[BCDFIJSZV])$", c));
+
+        result.addResult(className, coupling);
     }
 
     private List<String> solveMethodCodeLines(MethodNode method)
@@ -69,15 +72,8 @@ public class CBOAnalyzer implements Analyzer
     }
 
     @Override
-    public String getAnalyzeResult()
+    public AnalyzeResult getAnalyzeResult()
     {
-        for (var cls : couplingClasses.keySet())
-        {
-            System.out.println(cls + ":" + couplingClasses.get(cls).size());
-            couplingClasses.get(cls).forEach(c -> System.out.print(c + " "));
-            System.out.println();
-        }
-
-        return "";
+        return result;
     }
 }
