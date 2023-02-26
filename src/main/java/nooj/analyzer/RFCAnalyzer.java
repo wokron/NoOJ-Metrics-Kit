@@ -43,21 +43,8 @@ public class RFCAnalyzer implements Analyzer
 
     private void addMethodToList(Collection<String> methodsName,String ownerName, String methodName, String desc)
     {
-        String normalizedName = methodSignatureNormalize(ownerName, methodName, Util.solveDescriptor(desc));
+        String normalizedName = Util.normalizeMethodSignature(ownerName, methodName, desc);
         methodsName.add(normalizedName);
-    }
-
-    private String methodSignatureNormalize(String ownerName, String methodName, List<String> descList)
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.append(descList.get(descList.size() - 1)).append(" ")
-                .append(ownerName).append(".")
-                .append(methodName).append("(");
-        for (int i = 0; i < descList.size() - 1; i++)
-            sb.append(descList.get(i)).append(", ");
-        sb.append(")");
-
-        return sb.toString().replace("/", ".");
     }
 
     private List<String> solveMethodCodeLines(MethodNode method)

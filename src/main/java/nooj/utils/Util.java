@@ -29,4 +29,22 @@ public class Util
 
         return descTypes;
     }
+
+    public static String normalizeMethodSignature(String ownerName, String methodName, String methodDesc)
+    {
+        return normalizeMethodSignatureByDescList(ownerName, methodName, solveDescriptor(methodDesc));
+    }
+
+    private static String normalizeMethodSignatureByDescList(String ownerName, String methodName, List<String> descList)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append(descList.get(descList.size() - 1)).append(" ")
+                .append(ownerName).append(".")
+                .append(methodName).append("(");
+        for (int i = 0; i < descList.size() - 1; i++)
+            sb.append(descList.get(i)).append(", ");
+        sb.append(")");
+
+        return sb.toString().replace("/", ".");
+    }
 }
