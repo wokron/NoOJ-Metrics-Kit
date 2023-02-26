@@ -40,7 +40,9 @@ public class LCOM4Analyzer implements Analyzer
 
         for (var elem : fathers.keySet())
         {
-            sets.add(getFather(fathers, elem));
+            String father = getFather(fathers, elem);
+            if (!father.contains("lambda"))
+                sets.add(father);
         }
 
         result.addResult(cls.name, sets.size());
@@ -48,11 +50,11 @@ public class LCOM4Analyzer implements Analyzer
 
     private String getFather(Map<String, String> fathers, String elem)
     {
-        while (!fathers.get(elem).equals(elem))
-        {
-            elem = fathers.get(elem);
-        }
-        return elem;
+        if (fathers.get(elem).equals(elem))
+            return elem;
+        var father = getFather(fathers, fathers.get(elem));
+        fathers.put(elem, father);
+        return father;
     }
 
     private Map<String, Set<String>> getRelationMap(ClassNode cls)
@@ -67,6 +69,9 @@ public class LCOM4Analyzer implements Analyzer
 
         for (var m : cls.methods)
         {
+            if (m.name.equals("<init>") && m.instructions.size() <= 3)
+                continue;
+
             String methodSignature = Util.normalizeMethodSignature(cls.name, m.name, m.desc);
             var relatedMethodsAndFields = getRelatedMethodsAndFields(methods, fields, m);
             relationMap.put(methodSignature, relatedMethodsAndFields);
