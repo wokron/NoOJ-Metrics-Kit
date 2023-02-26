@@ -13,12 +13,11 @@ public class Main
         Scanner in = new Scanner(System.in);
 
         Analyzer[] analyzers = new Analyzer[]{
-                new WMCAnalyzer(),
-                new DITAnalyzer(),
-                new NOCAnalyzer(),
-                new CBOAnalyzer(),
-                new RFCAnalyzer(),
-                new LCOMAnalyzer(),
+                new LargeClassAnalyzer(),
+                new LongMethodAnalyzer(),
+                new LongParameterListAnalyzer(),
+                new CyclicDependencyAnalyzer(),
+                new LayerExposureAnalyzer(),
         };
 
         while (true)
@@ -29,7 +28,7 @@ public class Main
 
                 var loader = new ProjectLoader(path);
                 Arrays.stream(analyzers).forEach(a -> a.analyze(loader.getResult()));
-                Arrays.stream(analyzers).forEach(Analyzer::getAnalyzeResult);
+                Arrays.stream(analyzers).forEach(a -> System.out.println(a.getAnalyzeResult() + "\n"));
 
                 break;
             } catch (IOException e) {
