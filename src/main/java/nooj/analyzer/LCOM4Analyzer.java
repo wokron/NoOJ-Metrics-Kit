@@ -1,6 +1,5 @@
 package nooj.analyzer;
 
-import nooj.result.AnalyzeResult;
 import nooj.result.ClassAnalyzeResult;
 import nooj.utils.Util;
 import org.objectweb.asm.tree.ClassNode;
@@ -102,7 +101,7 @@ public class LCOM4Analyzer implements Analyzer
     }
 
     @Override
-    public AnalyzeResult getAnalyzeResult()
+    public ClassAnalyzeResult<Integer> getAnalyzeResult()
     {
         return result;
     }
