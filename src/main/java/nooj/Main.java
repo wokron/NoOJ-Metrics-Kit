@@ -4,13 +4,13 @@ import nooj.analyzer.*;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        Scanner in = new Scanner(System.in);
+        if (args.length < 1)
+            return;
 
         Analyzer[] analyzers = new Analyzer[]{
                 new LargeClassAnalyzer(),
@@ -23,8 +23,7 @@ public class Main
         while (true)
         {
             try {
-                System.out.print("enter project path:");
-                String path = in.nextLine();
+                String path = args[0];
 
                 var loader = new ProjectLoader(path);
                 Arrays.stream(analyzers).forEach(a -> a.analyze(loader.getResult()));

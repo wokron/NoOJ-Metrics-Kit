@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LayerExposureAnalyzer.java" afterDir="false" />
+    <list default="true" id="4c30a58e-772b-44d9-829a-dc3e23017e0e" name="变更" comment="添加jar包配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nooj/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/CBOAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/CBOAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOM4Analyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/analyzer/LCOM4Analyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/result/ClassAnalyzeResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/result/ClassAnalyzeResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/result/ListLikeAnalyzeResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/result/ListLikeAnalyzeResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nooj/utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nooj/utils/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nooj/analyzer/AnalyzerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +52,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -78,6 +74,12 @@
       <workItem from="1677369779877" duration="63000" />
       <workItem from="1677371391218" duration="140000" />
       <workItem from="1677371549266" duration="17356000" />
+      <workItem from="1677418557361" duration="1355000" />
+      <workItem from="1677754803981" duration="2470000" />
+      <workItem from="1677761653997" duration="1160000" />
+      <workItem from="1677911061774" duration="709000" />
+      <workItem from="1678113292382" duration="481000" />
+      <workItem from="1678188554222" duration="2689000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <created>1677072565617</created>
@@ -261,7 +263,35 @@
       <option name="project" value="LOCAL" />
       <updated>1677399539505</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="修改了Result的输出格式">
+      <created>1677405643914</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1677405643914</updated>
+    </task>
+    <task id="LOCAL-00028" summary="完成了层次结构检测">
+      <created>1677405691788</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1677405691788</updated>
+    </task>
+    <task id="LOCAL-00029" summary="修正了LCOM4中的一些bug">
+      <created>1677405731838</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1677405731838</updated>
+    </task>
+    <task id="LOCAL-00030" summary="修改了程序入口">
+      <created>1677405761041</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1677405761041</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,11 +321,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成ProjectLoader" />
-    <MESSAGE value="完成WMCAnalyzer" />
-    <MESSAGE value="修正WMCAnalyzer" />
-    <MESSAGE value="完成DITAnalyzer" />
-    <MESSAGE value="完成NOCAnalyzer" />
     <MESSAGE value="完成CBOAnalyzer" />
     <MESSAGE value="将solveDescriptor方法提取作为工具方法" />
     <MESSAGE value="workspace.xml更改" />
@@ -316,7 +341,12 @@
     <MESSAGE value="修改了MethodResult的输出格式" />
     <MESSAGE value="完成了LongParameterListAnalyzer" />
     <MESSAGE value="完成了循环依赖检测" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了循环依赖检测" />
+    <MESSAGE value="修改了Result的输出格式" />
+    <MESSAGE value="完成了层次结构检测" />
+    <MESSAGE value="修正了LCOM4中的一些bug" />
+    <MESSAGE value="修改了程序入口" />
+    <MESSAGE value="添加jar包配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加jar包配置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
